@@ -6,7 +6,6 @@ import { LoggingService } from '../logging.service'
   selector: 'app-account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css'],
-  providers:[LoggingService]
 })
 export class AccountComponent {
 
@@ -18,6 +17,5 @@ export class AccountComponent {
 
   onSetTo(status: string) {
     this.accountService.updateAccount(this.id,status,"");
-    this.loggingService.logStatusChange(status);
   }
 }
