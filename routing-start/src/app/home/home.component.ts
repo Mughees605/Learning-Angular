@@ -12,8 +12,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  onLoad(){
-      this.router.navigate(['/servers'])
+  onLoad(id:number){
+      this.router.navigate(['/servers',id,'edit'],{queryParams:{allowEdit:'1'}, fragment:'loading'})
   }
 
 }
