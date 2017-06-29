@@ -1,0 +1,15 @@
+<!--The whole content below can be removed with the new code.-->
+<div>
+  <h1>{{title}}</h1>
+  <ul style="width:200px">
+    <li *ngFor='let hero of heroes' (click)='onSelected(hero)' style="list-style-type:none;border:1px solid black" >
+      
+      <p><span style="color:red">{{hero.id}} )</span>  {{hero.name}}</p>
+    </li>
+  </ul>
+  <div *ngIf='selectedHero'>
+    <p>{{selectedHero.name}} is my hero</p>
+    <button [routerLink]='["/detail",selectedHero.id]'>View Details</button>
+   </div>
+</div>
+
