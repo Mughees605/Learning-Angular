@@ -17,6 +17,7 @@ export class HeroComponent implements OnInit {
   constructor(private heroservice: HeroService) { }
   ngOnInit() {
     this.getHeroes()
+    this.getHttp();
   }
 
   getHeroes() {
@@ -26,5 +27,11 @@ export class HeroComponent implements OnInit {
         this.heroes = heroes
       }
     )
+  }
+
+  getHttp(){
+    this.heroservice.getHeroesFromHtpp().then(
+      hero=>console.log(hero,"hero")
+    ).catch(err=>console.log(err))
   }
 }
