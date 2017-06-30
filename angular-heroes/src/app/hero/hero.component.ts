@@ -20,6 +20,11 @@ export class HeroComponent implements OnInit {
   }
 
   getHeroes() {
-    this.heroes = this.heroservice.getAllHeroes()
+    // this.heroes = this.heroservice.getAllHeroes()
+    this.heroservice.getHeroes().then(
+      (heroes)=>{
+        this.heroes = heroes
+      }
+    )
   }
 }

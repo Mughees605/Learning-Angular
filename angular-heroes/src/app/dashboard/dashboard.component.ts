@@ -17,7 +17,11 @@ export class DashboardComponent implements OnInit {
      this.getMinHeroes()
   }
   getMinHeroes(){
-    this.minHeroes = this.heroService.getAllHeroes().slice(1,5)
+    this.heroService.getHeroes().then(
+      (heroes)=>{
+         this.minHeroes = heroes.slice(1,5)
+      }
+    )
   }
 
 }

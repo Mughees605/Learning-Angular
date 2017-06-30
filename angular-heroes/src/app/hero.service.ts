@@ -1,4 +1,6 @@
 import { Hero } from './hero'
+import 'rxjs/add/operator/toPromise';
+
 const HEROES: Hero[] = [
   { id: 11, name: 'Mr. Nice' },
   { id: 12, name: 'Narco' },
@@ -13,7 +15,12 @@ const HEROES: Hero[] = [
 ];
 export class HeroService {
 
-  getAllHeroes() {
-    return HEROES
+  getHeroes():Promise<Hero[]>{
+    return Promise.resolve(HEROES)
+  }
+
+  getHero(id:number):Promise<Hero>{
+    return this.getHeroes()
+    .then(heroes => heroes.find(hero => hero.id === id))
   }
 }
