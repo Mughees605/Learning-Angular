@@ -33,15 +33,14 @@ export class AppComponent {
 
   onGet() { 
     this.serverService.getServers().subscribe(
-      (res)=>{
-        console.log(res.json())
-      }
+      (servers:any[])=> this.servers = servers,
+      (err)=> console.log(err)
     )
   }
 
   onSave() {
     this.serverService.storeServers(this.servers).subscribe(
-      (res:Response) => { console.log(res) }
+      (res) => { console.log(res) }
     )
   }
   private generateId() {
