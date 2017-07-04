@@ -3,10 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http'
 import { FormsModule } from '@angular/forms'
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database'
 import { AngularFireAuthModule } from 'angularfire2/auth'
-
-
 
 
   // Initialize Firebase
@@ -20,18 +17,23 @@ import { AngularFireAuthModule } from 'angularfire2/auth'
   };
 
 import { AppComponent } from './app.component';
+import { MembersComponent } from './members/members.component';
+import { EmailComponentComponent } from './email-component/email-component.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MembersComponent,
+    EmailComponentComponent,
+    SignupComponent
   ],
   imports: [
     FormsModule,
     HttpModule,
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule,
-    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
