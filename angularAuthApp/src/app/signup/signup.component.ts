@@ -10,19 +10,25 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
    
-  @ViewChild('f') singupForm:NgForm
-  constructor(private af:AngularFireAuth) { }
+   error:any
+
+  @ViewChild('f') singupForm: NgForm
+  constructor(private af: AngularFireAuth, private router: Router) { }
 
   ngOnInit() {
   }
-   
-  onSubmit(){
-  if(this.singupForm.valid){
-    console.log(this.singupForm.value)
-    this.af.auth.createUserWithEmailAndPassword(this.singupForm.value.useremail,this.singupForm.value.password)
-    .then((res)=>{console.log(res)})
+
+  onSubmit() {
+    if (this.singupForm.valid) {
+      console.log(this.singupForm.value)
+      this
+        .af
+        .auth
+        .createUserWithEmailAndPassword(this.singupForm.value.useremail, this.singupForm.value.password)
+        .then((success) => this.router.navigate(['/login']))
+        .catch((err)=>this.error = err)
+    }
   }
-  }
-  
+
 
 }
