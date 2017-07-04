@@ -1,3 +1,4 @@
+import { AngularFireAuth } from 'angularfire2/auth';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MembersComponent implements OnInit {
 
-  constructor() { }
+  constructor(public af:AngularFireAuth) {
+    this.af.authState.subscribe((res)=>console.log(res))
+   }
 
   ngOnInit() {
   }
+
 
 }
