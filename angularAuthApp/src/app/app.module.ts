@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http'
 import { FormsModule } from '@angular/forms'
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth'
+import { routes } from './app.routes';
 
 
   // Initialize Firebase
@@ -20,20 +21,23 @@ import { AppComponent } from './app.component';
 import { MembersComponent } from './members/members.component';
 import { EmailComponentComponent } from './email-component/email-component.component';
 import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MembersComponent,
     EmailComponentComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     FormsModule,
     HttpModule,
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    routes
   ],
   providers: [],
   bootstrap: [AppComponent]
