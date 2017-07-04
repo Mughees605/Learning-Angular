@@ -9,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class MembersComponent implements OnInit {
 
   constructor(public af:AngularFireAuth) {
-    this.af.authState.subscribe((res)=>console.log(res))
+    this.af.authState.subscribe(
+      (auth)=>{
+        if(auth){
+          console.log(auth)
+        }
+      }
+    )
    }
 
   ngOnInit() {
