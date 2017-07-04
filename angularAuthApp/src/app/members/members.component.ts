@@ -1,4 +1,5 @@
 import { AngularFireAuth } from 'angularfire2/auth';
+import { Router } from '@angular/router'
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,14 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MembersComponent implements OnInit {
 
-  constructor(public af:AngularFireAuth) {
+  constructor(public af:AngularFireAuth, private router:Router) {
     this.af.authState.subscribe(
       (auth)=>{
         if(auth){
-          console.log(auth)
+          console.log(auth.email)
         }
       }
     )
+   }
+   onSignOut(){
+     this
+     .af
+     .auth
+     .signOut()
+     .then(()=>this.router.navigate(['/login']))
+     .catch((err)=> console.log(err))
    }
 
   ngOnInit() {

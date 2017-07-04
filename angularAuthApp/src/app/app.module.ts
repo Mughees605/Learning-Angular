@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms'
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth'
 import { routes } from './app.routes';
+import { AuthGuard } from './auth.service';
 
 
   // Initialize Firebase
@@ -39,7 +40,7 @@ import { LoginComponent } from './login/login.component';
     AngularFireAuthModule,
     routes
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
