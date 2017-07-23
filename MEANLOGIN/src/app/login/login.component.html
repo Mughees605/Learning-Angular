@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-5 col-md-offset-3">
+    <form   >
+      <div class="row">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" class="form-control" name="name" ngModel required>
+          <label for="name">Rank</label>
+          <input type="text" id="name" class="form-control" name="rank" ngModel required>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <button class="btn btn-primary btn-block" type="submit">Login</button>
+          <button class="btn btn-primary btn-block" [routerLink]="['/register']">Register</button>          
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
