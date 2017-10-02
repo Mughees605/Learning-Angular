@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ValidateService } from '../../service/validate.service';
+import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -7,9 +9,13 @@ import { ValidateService } from '../../service/validate.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private validate:ValidateService) { }
+  constructor(private validateService:ValidateService) { }
+
+  @ViewChild('f') ngForm:NgForm;
 
   ngOnInit() {
   }
 
+  onRegister(){
+  }
 }
