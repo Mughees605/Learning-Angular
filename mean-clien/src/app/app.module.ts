@@ -9,12 +9,14 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 //services
 import { ValidateService } from './service/validate.service';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
+//routes
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent},
+  { path: 'dashboard', component: DashboardComponent },
 ]
 
 @NgModule({
@@ -26,6 +28,7 @@ const appRoutes: Routes = [
     DashboardComponent
   ],
   imports: [
+    FlashMessagesModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes),
   ],
