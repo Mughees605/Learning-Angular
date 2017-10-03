@@ -9,6 +9,11 @@
             <form  (ngSubmit)='onRegister()' #f="ngForm">
               <div class="input-group mb-1">
                 <span class="input-group-addon"><i class="icon-user"></i></span>
+                <input type="text" class="form-control" placeholder="name" ngModel name="name" required/>
+              </div>
+
+              <div class="input-group mb-1">
+                <span class="input-group-addon"><i class="icon-user"></i></span>
                 <input type="text" class="form-control" placeholder="Username" ngModel name="username" required/>
               </div>
 
