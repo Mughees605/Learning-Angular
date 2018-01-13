@@ -1,0 +1,13 @@
+.first-col{
+    border: 1px solid black;
+    flex-grow: 1;
+}
+.second-col{
+    flex-grow: 1;
+    border: 1px solid black;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: stretch
+}
