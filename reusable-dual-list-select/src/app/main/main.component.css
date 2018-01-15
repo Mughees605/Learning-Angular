@@ -1,13 +1,31 @@
 .first-col{
-    border: 1px solid black;
+    height: 120px;
     flex-grow: 1;
+    border: 1px solid black;
+    overflow-x: hidden;
 }
 .second-col{
+    height: 120px;    
     flex-grow: 1;
     border: 1px solid black;
+    overflow-x: hidden;    
+}
+.arrow-col{
+    flex-grow: 1;
+    border: 1px solid black;    
+    text-align: center;
+
+}
+.hide{
+    color: #999;
+}
+.show{
+    color: #000;
 }
 .container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: stretch
+    width: 200px;
+    margin: 0px auto
 }

@@ -1,21 +1,12 @@
 <div class="container">
   <div class="first-col">
-      <app-first-reusable 
-       *ngFor='let item of mainArr; let i = index'
-       [item]='item.text'
-       [id]='i'
-       (findIndex)='findIndex($event)'
-       ></app-first-reusable>
+    <app-first-reusable *ngFor='let item of mainArr; let i = index' [item]='item.text' [id]='i' (findIndex)='findIndex($event)'></app-first-reusable>
   </div>
-
+  <div class="arrow-col">
+    <i class="fa fa-arrow-circle-down" aria-hidden="true" (click)='selectAll()' [ngClass]="(downArrow==true)?'show':'hide'"></i>
+    <i class="fa fa-arrow-circle-up" aria-hidden="true" (click)='deselectAll()' [ngClass]="(upArrow==true)?'show':'hide'"></i>
+  </div>
   <div class="second-col">
-    <app-second-reusable
-     *ngFor='let item of secondArr; let i = index'
-     [item]='item.text'
-     [id]='i'
-     (resendIndex)='resendIndex($event)'
-    ></app-second-reusable> 
+    <app-second-reusable *ngFor='let item of secondArr; let i = index' [item]='item.text' [id]='i' (resendIndex)='resendIndex($event)'></app-second-reusable>
   </div>
-  <button (click)='selectAll()'>SelectAll</button>
-  <button (click)='deselectAll()'>DeselectAll</button>
-</div>  
+</div>

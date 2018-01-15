@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-   mainArr:Array<any> = [ { text:"list"}, { text:"text"} , {text: 'commit'} ];
+   mainArr:Array<any> = [ { text:"list"}, { text:"text"} , {text: 'commit'}, {text: 'fasdfsd'} ];
 
 }
 
