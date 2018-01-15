@@ -5,7 +5,7 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
   templateUrl: './second-reusable.component.html',
   styleUrls: ['./second-reusable.component.css'],
   inputs: ['item', 'id'],
-  outputs: ['resendIndex']
+  outputs: ['resendItem']
 
 })
 export class SecondReusableComponent implements OnInit {
@@ -13,12 +13,12 @@ export class SecondReusableComponent implements OnInit {
   constructor() { }
   item:string
   id:string
-  resendIndex = new EventEmitter();
+  resendItem = new EventEmitter();
   ngOnInit() {
   }
 
-  sendIndex(id){
-    this.resendIndex.emit(id);
+  resendItemToParent(id){
+    this.resendItem.emit(id);
   }
 
 }
