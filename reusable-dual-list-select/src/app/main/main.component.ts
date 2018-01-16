@@ -69,7 +69,7 @@ export class MainComponent implements OnChanges{
   filterItem(value){
       if(!value) this.assignCopy(); 
       this.filteredItems = Object.assign([], this.items).filter(
-      item => item.text.toLowerCase().indexOf(value.toLowerCase()) > -1
+      item => item.toLowerCase().indexOf(value.toLowerCase()) > -1
    )
   }
 }
