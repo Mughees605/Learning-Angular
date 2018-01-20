@@ -5,17 +5,17 @@ import { Component, OnInit, Input, OnChanges, EventEmitter } from '@angular/core
   templateUrl: './first-reusable.component.html',
   styleUrls: ['./first-reusable.component.css'], 
   inputs: ['item', 'id'],
-  outputs: ['findIndex']
+  outputs: ['sendItem']
 })
 export class FirstReusableComponent {
 
   constructor() { }
   item:string
   id:string
-  findIndex = new EventEmitter();
+  sendItem = new EventEmitter();
 
-  sendIndex(id){
-    this.findIndex.emit(id);
+  sendItemToParent(id){
+    this.sendItem.emit(id);
   }
 
 
